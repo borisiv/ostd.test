@@ -8,11 +8,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'views/layout/AppView',
-    'views/layout/UserInputView',
-    'views/layout/SuccessView',
-    'views/layout/ErrorView'
-], function($, _, Backbone, AppView, UserInputView, SuccessView, ErrorView) {
+    'views/layout/AppView'
+], function($, _, Backbone, AppView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -20,14 +17,13 @@ define([
             "!/": "showDefault", // Home page
             "!/success": "showSuccess", // Success page
             "!/error": "showError" // Error page
-
         },
 
         initialize : function () {
             _.bindAll(this,'showDefault','showPage','removeCurrentView','setView');
         },
 
-        showPage : function (MainView,HeaderView,FooterView) {
+        showPage : function (MainView) {
             this.removeCurrentView();
             // var pageContainer = $('<div></div>').attr({id : 'app'})
             // $('body').append(pageContainer);
@@ -54,21 +50,21 @@ define([
             this.showParams = {
                 el:'#app'
             };
-            require(['UserInputView'],this.showPage);
+            require(['views/layout/UserInputView'],this.showPage);
         },
 
         showError : function () {
             this.showParams = {
                 el:'#app'
             };
-            require(['ErrorView'],this.showPage);
+            require(['views/layout/ErrorView'],this.showPage);
         },
 
         showSuccess: function () {
             this.showParams = {
                 el:'#app'
             };
-            require(['SuccessView'],this.showPage);
+            require(['views/layout/SuccessView'],this.showPage);
         }
     });
 
