@@ -8,8 +8,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'models/AppState',
     'views/layout/AppView'
-], function($, _, Backbone, AppView) {
+], function($, _, Backbone, userAcc, AppView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -25,10 +26,7 @@ define([
 
         showPage : function (MainView) {
             this.removeCurrentView();
-            // var pageContainer = $('<div></div>').attr({id : 'app'})
-            // $('body').append(pageContainer);
             this.showParams.mainContent = MainView;
-            // this.showParams.headerContent = HeaderView;
             var page = new AppView(this.showParams);
             page.render();
             this.setView(page);
