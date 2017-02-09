@@ -5,7 +5,7 @@ define([
     'text!templates/layout/success.html',
     //dirty hack for handlebars loading wait
     'handlebars'
-], function($, _, Backbone, success, Handlebars){
+], function($, _, Backbone, success){
 
     var Success = Backbone.View.extend({
 

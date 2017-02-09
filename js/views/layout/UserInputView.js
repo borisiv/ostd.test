@@ -5,7 +5,7 @@ define([
     'text!templates/layout/userInput.html',
     //dirty hack for handlebars loading wait
     'handlebars'
-], function($, _, Backbone,userInput, Handlebars){
+], function($, _, Backbone, userInput){
 
     var UserInput = Backbone.View.extend({
 
