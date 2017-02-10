@@ -62,15 +62,21 @@ footer:before{
     margin-bottom: 20px;
 }
 .block{
-    margin: 5px;
     padding: 5px;
     border: 2px solid #9595f9;
     margin: 2em 0;
 }
 
+.input-area{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .load{
     background: url(../i/load.gif) no-repeat center;
 }
-#error, #success{
-    display: none;
+
+#ba label{
+    padding: 0 1em;
 }

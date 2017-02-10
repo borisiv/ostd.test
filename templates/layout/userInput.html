@@ -1,22 +1,33 @@
 <form class="hb clearfix" method="POST" id="user_info">
     <div id="pd" class="block">
         <h2>Personal data</h2>
-        <label for="pd-first">First name</label>
-        <input id="pd-first" type="text" name="firstname">
-        <br>
-        <label for="pd-last">Last name</label>
-        <input id="pd-last" type="text" name="lastname">
-        <br>
-        <label for="pd-dob">Date of birth</label>
-        <input id="pd-dob" type="text" name="dob">
+        <div class="input-area">
+            <div>
+                <label for="pd-first">First name</label>
+                <input id="pd-first" type="text" name="firstname">
+            </div>
+            <div>
+                <label for="pd-last">Last name</label>
+                <input id="pd-last" type="text" name="lastname">
+            </div>
+            <div>
+                <label for="pd-dob">Date of birth</label>
+                <input id="pd-dob" type="text" name="dob">
+            </div>
+        </div>
     </div>
     <div id="ba" class="block">
         <h2>Bank Account</h2>
-        <label for="ba-iban">IBAN</label>
-        <input id="ba-iban" type="text" name="iban">
-        <br>
-        <label for="ba-bic">BIC</label>
-        <input id="ba-bic" type="text" name="bic">
+        <div class="input-area">
+            <div>
+                <label for="ba-iban">IBAN</label>
+                <input id="ba-iban" type="text" name="iban">
+            </div>
+            <div>
+                <label for="ba-bic">BIC</label>
+                <input id="ba-bic" type="text" name="bic">
+            </div>
+        </div>
     </div>
     <input type="button" id="save" value="Save">
 </form>
