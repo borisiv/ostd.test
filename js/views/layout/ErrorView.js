@@ -12,7 +12,7 @@ define([
         template : Handlebars.compile(error),
 
         initialize : function() {
-//            nothing to do here
+            //            nothing to do here
         },
 
         render: function(){

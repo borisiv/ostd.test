@@ -12,6 +12,8 @@ define([
 
         model: new AppState(),
 
+        router: {},
+
         template : Handlebars.compile(userInput),
 
         events: {
@@ -24,7 +26,6 @@ define([
             btn.className = 'load'; // add gif
             var params = $("#user_info").serialize();
             var username = this.$el.find("#pd-first").val() + " " + $(this.el).find("#pd-last").val();
-            console.log(this.model);
             var that = this;
             $.post('data/mock.php', params, function(data){
                 if(data === '1'){
@@ -32,22 +33,22 @@ define([
                         "state": "success",
                         "username": username
                     });
-                    // controller.navigate("success", true); // go to success page
+                    that.router.navigate("!/success", true); // go to success page
                 }
                 else{
                     that.model.set({ // Save username and state
                         "state": "error",
                         "username": username
                     });
-                    // controller.navigate("error", true); // go to error page
+                    that.router.navigate("!/error", true); // go to error page
                 }
 
                 btn.disabled = false; // active button
                 btn.className = '';   // remove gif
             });
         },
-        initialize : function() {
-//            nothing to do here
+        initialize : function(options) {
+            this.router = options.router;
 //             this.model.bind('change', this.render, this);
         },
 

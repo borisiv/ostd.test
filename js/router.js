@@ -21,23 +21,24 @@ define([
         },
 
         initialize : function () {
-            _.bindAll(this,'showDefault','showPage','removeCurrentView','setView');
+            _.bindAll(this,'showDefault', 'showSuccess', 'showError', 'showPage','removeCurrentView','setView');
         },
 
         showPage : function (MainView) {
             this.removeCurrentView();
             this.showParams.mainContent = MainView;
+            this.showParams.router = this;
             var page = new AppView(this.showParams);
             page.render();
             this.setView(page);
         },
 
         removeCurrentView : function () {
-            if (!_.isEmpty(this.view)) {
-                this.view.undelegateEvents();
-                this.view.remove();
-            }
-            this.view = null;
+            // if (!_.isEmpty(this.view)) {
+            //     this.view.undelegateEvents();
+            //     this.view.remove();
+            // }
+            // this.view = null;
         },
 
         setView : function (view) {

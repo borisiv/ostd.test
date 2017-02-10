@@ -10,12 +10,16 @@ h1{
     margin: 0.7em 0;
 }
 h2{
+    color: #9595f9;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #9595f9;
-    background-color: #d9d9ff;
     margin-bottom: 5px;
 }
+
+.block h2{
+    background-color: #d9d9ff;
+}
+
 #user-info{
     margin: 1em;
 }
@@ -54,6 +58,8 @@ footer:before{
 }
 #save{
     padding: 10px 25px;
+    float: right;
+    margin-bottom: 20px;
 }
 .block{
     margin: 5px;
